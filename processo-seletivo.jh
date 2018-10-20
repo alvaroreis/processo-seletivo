@@ -1,0 +1,66 @@
+entity Modalidade {
+	nome String,
+}
+
+entity Curso {
+	codSigaa Integer,
+    nome String,
+    cursoNovo Integer,
+    justificativaNovo String,
+    vagasAutorizadasMec Integer,
+    resolucao String,
+}
+
+entity Turno {
+	nome String,
+}
+
+entity DemandaCurso {
+	data LocalDate,
+    resolucao String,
+}
+
+entity PeriodoOferta {
+	descricao String,
+    dataInicio LocalDate,
+    dataFim LocalDate,
+}
+
+entity Usuario {
+	login String,
+    senha String, 
+}
+
+entity Perfil {
+	nome String,
+
+}
+
+entity Unidade{
+	nome String
+	telefone String
+	abreviacao String
+}
+
+entity Cidade {
+	nome String
+}
+
+relationship OneToMany {
+	Modalidade{curso(nome)} to Curso{modalidade(nome)},
+    Turno{curso(nome)} to Curso{turno(nome)},
+    Unidade{curso(nome)} to Curso{unidade(nome)},
+    Perfil{usuario(nome)} to Usuario{perfil(nome)},
+	Cidade{unidade(nome)} to Unidade{cidade(nome)},
+    DemandaCurso{periodoOferta(descricao)} to PeriodoOferta{demandaCurso(resolucao)},
+	Unidade{demandaCurso(resolucao)} to DemandaCurso{unidade(nome)},
+}
+
+relationship OneToOne {
+    Unidade{usuario(nome)} to Usuario{unidade(nome)},
+}
+
+// Set pagination options
+paginate Unidade with infinite-scroll
+paginate Modalidade, Curso with pagination
+
