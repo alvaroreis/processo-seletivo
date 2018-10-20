@@ -1,0 +1,23 @@
+
+{
+    "processoSeletivoApp": {
+        "turno" : {
+            "home": {
+                "title": "Turnos",
+                "createLabel": "Criar novo Turno",
+                "createOrEditLabel": "Criar ou editar Turno"
+            },
+            "created": "Um novo Turno foi criado com o identificador {{ param }}",
+            "updated": "Um Turno foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Turno foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Turno {{ id }}?"
+            },
+            "detail": {
+                "title": "Turno"
+            },
+            "nome": "Nome",
+            "curso": "Curso"
+        }
+    }
+}

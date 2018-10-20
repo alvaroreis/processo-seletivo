@@ -1,0 +1,25 @@
+
+{
+    "processoSeletivoApp": {
+        "periodoOferta" : {
+            "home": {
+                "title": "Periodo Ofertas",
+                "createLabel": "Criar novo Periodo Oferta",
+                "createOrEditLabel": "Criar ou editar Periodo Oferta"
+            },
+            "created": "Um novo Periodo Oferta foi criado com o identificador {{ param }}",
+            "updated": "Um Periodo Oferta foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Periodo Oferta foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Periodo Oferta {{ id }}?"
+            },
+            "detail": {
+                "title": "Periodo Oferta"
+            },
+            "descricao": "Descricao",
+            "dataInicio": "Data Inicio",
+            "dataFim": "Data Fim",
+            "demandaCurso": "Demanda Curso"
+        }
+    }
+}

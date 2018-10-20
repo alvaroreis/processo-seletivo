@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="curso">
+            <h2><span jhiTranslate="processoSeletivoApp.curso.detail.title">Curso</span> {{curso.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="processoSeletivoApp.curso.codSigaa">Cod Sigaa</span></dt>
+                <dd>
+                    <span>{{curso.codSigaa}}</span>
+                </dd>
+                <dt><span jhiTranslate="processoSeletivoApp.curso.nome">Nome</span></dt>
+                <dd>
+                    <span>{{curso.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="processoSeletivoApp.curso.cursoNovo">Curso Novo</span></dt>
+                <dd>
+                    <span>{{curso.cursoNovo}}</span>
+                </dd>
+                <dt><span jhiTranslate="processoSeletivoApp.curso.justificativaNovo">Justificativa Novo</span></dt>
+                <dd>
+                    <span>{{curso.justificativaNovo}}</span>
+                </dd>
+                <dt><span jhiTranslate="processoSeletivoApp.curso.vagasAutorizadasMec">Vagas Autorizadas Mec</span></dt>
+                <dd>
+                    <span>{{curso.vagasAutorizadasMec}}</span>
+                </dd>
+                <dt><span jhiTranslate="processoSeletivoApp.curso.resolucao">Resolucao</span></dt>
+                <dd>
+                    <span>{{curso.resolucao}}</span>
+                </dd>
+                <dt><span jhiTranslate="processoSeletivoApp.curso.modalidade">Modalidade</span></dt>
+                <dd>
+                    <div *ngIf="curso.modalidade">
+                        <a [routerLink]="['/modalidade', curso.modalidade?.id, 'view']">{{curso.modalidade?.nome}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="processoSeletivoApp.curso.turno">Turno</span></dt>
+                <dd>
+                    <div *ngIf="curso.turno">
+                        <a [routerLink]="['/turno', curso.turno?.id, 'view']">{{curso.turno?.nome}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="processoSeletivoApp.curso.unidade">Unidade</span></dt>
+                <dd>
+                    <div *ngIf="curso.unidade">
+                        <a [routerLink]="['/unidade', curso.unidade?.id, 'view']">{{curso.unidade?.nome}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/curso', curso.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+    "name": "Perfil",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "usuario",
+            "otherEntityName": "usuario",
+            "otherEntityRelationshipName": "perfil"
+        }
+    ],
+    "changelogDate": "20181020200051",
+    "entityTableName": "perfil",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

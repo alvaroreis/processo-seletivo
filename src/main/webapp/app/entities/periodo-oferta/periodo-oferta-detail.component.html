@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="periodoOferta">
+            <h2><span jhiTranslate="processoSeletivoApp.periodoOferta.detail.title">Periodo Oferta</span> {{periodoOferta.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="processoSeletivoApp.periodoOferta.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{periodoOferta.descricao}}</span>
+                </dd>
+                <dt><span jhiTranslate="processoSeletivoApp.periodoOferta.dataInicio">Data Inicio</span></dt>
+                <dd>
+                    <span>{{periodoOferta.dataInicio}}</span>
+                </dd>
+                <dt><span jhiTranslate="processoSeletivoApp.periodoOferta.dataFim">Data Fim</span></dt>
+                <dd>
+                    <span>{{periodoOferta.dataFim}}</span>
+                </dd>
+                <dt><span jhiTranslate="processoSeletivoApp.periodoOferta.demandaCurso">Demanda Curso</span></dt>
+                <dd>
+                    <div *ngIf="periodoOferta.demandaCurso">
+                        <a [routerLink]="['/demanda-curso', periodoOferta.demandaCurso?.id, 'view']">{{periodoOferta.demandaCurso?.resolucao}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/periodo-oferta', periodoOferta.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+    "name": "Turno",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "curso",
+            "otherEntityName": "curso",
+            "otherEntityRelationshipName": "turno"
+        }
+    ],
+    "changelogDate": "20181020200047",
+    "entityTableName": "turno",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

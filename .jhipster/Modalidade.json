@@ -1,0 +1,26 @@
+{
+    "name": "Modalidade",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "curso",
+            "otherEntityName": "curso",
+            "otherEntityRelationshipName": "modalidade"
+        }
+    ],
+    "changelogDate": "20181020200045",
+    "entityTableName": "modalidade",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

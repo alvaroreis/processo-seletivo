@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-curso-heading" jhiTranslate="processoSeletivoApp.curso.home.createOrEditLabel">Create or edit a Curso</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!curso.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="curso.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="processoSeletivoApp.curso.codSigaa" for="field_codSigaa">Cod Sigaa</label>
+                    <input type="number" class="form-control" name="codSigaa" id="field_codSigaa"
+                        [(ngModel)]="curso.codSigaa" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="processoSeletivoApp.curso.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                        [(ngModel)]="curso.nome" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="processoSeletivoApp.curso.cursoNovo" for="field_cursoNovo">Curso Novo</label>
+                    <input type="number" class="form-control" name="cursoNovo" id="field_cursoNovo"
+                        [(ngModel)]="curso.cursoNovo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="processoSeletivoApp.curso.justificativaNovo" for="field_justificativaNovo">Justificativa Novo</label>
+                    <input type="text" class="form-control" name="justificativaNovo" id="field_justificativaNovo"
+                        [(ngModel)]="curso.justificativaNovo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="processoSeletivoApp.curso.vagasAutorizadasMec" for="field_vagasAutorizadasMec">Vagas Autorizadas Mec</label>
+                    <input type="number" class="form-control" name="vagasAutorizadasMec" id="field_vagasAutorizadasMec"
+                        [(ngModel)]="curso.vagasAutorizadasMec" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="processoSeletivoApp.curso.resolucao" for="field_resolucao">Resolucao</label>
+                    <input type="text" class="form-control" name="resolucao" id="field_resolucao"
+                        [(ngModel)]="curso.resolucao" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="processoSeletivoApp.curso.modalidade" for="field_modalidade">Modalidade</label>
+                    <select class="form-control" id="field_modalidade" name="modalidade" [(ngModel)]="curso.modalidade" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="modalidadeOption.id === curso.modalidade?.id ? curso.modalidade : modalidadeOption" *ngFor="let modalidadeOption of modalidades; trackBy: trackModalidadeById">{{modalidadeOption.nome}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="processoSeletivoApp.curso.turno" for="field_turno">Turno</label>
+                    <select class="form-control" id="field_turno" name="turno" [(ngModel)]="curso.turno" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="turnoOption.id === curso.turno?.id ? curso.turno : turnoOption" *ngFor="let turnoOption of turnos; trackBy: trackTurnoById">{{turnoOption.nome}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="processoSeletivoApp.curso.unidade" for="field_unidade">Unidade</label>
+                    <select class="form-control" id="field_unidade" name="unidade" [(ngModel)]="curso.unidade" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="unidadeOption.id === curso.unidade?.id ? curso.unidade : unidadeOption" *ngFor="let unidadeOption of unidades; trackBy: trackUnidadeById">{{unidadeOption.nome}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

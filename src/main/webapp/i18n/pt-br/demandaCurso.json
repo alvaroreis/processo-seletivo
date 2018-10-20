@@ -1,0 +1,25 @@
+
+{
+    "processoSeletivoApp": {
+        "demandaCurso" : {
+            "home": {
+                "title": "Demanda Cursos",
+                "createLabel": "Criar novo Demanda Curso",
+                "createOrEditLabel": "Criar ou editar Demanda Curso"
+            },
+            "created": "Um novo Demanda Curso foi criado com o identificador {{ param }}",
+            "updated": "Um Demanda Curso foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Demanda Curso foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Demanda Curso {{ id }}?"
+            },
+            "detail": {
+                "title": "Demanda Curso"
+            },
+            "data": "Data",
+            "resolucao": "Resolucao",
+            "periodoOferta": "Periodo Oferta",
+            "unidade": "Unidade"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "DemandaCurso",
+    "fields": [
+        {
+            "fieldName": "data",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "resolucao",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "periodoOferta",
+            "otherEntityName": "periodoOferta",
+            "otherEntityRelationshipName": "demandaCurso"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "unidade",
+            "otherEntityName": "unidade",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20181020200048",
+    "entityTableName": "demanda_curso",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
