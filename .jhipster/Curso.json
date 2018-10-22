@@ -1,0 +1,58 @@
+{
+    "name": "Curso",
+    "fields": [
+        {
+            "fieldName": "codSigaa",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cursoNovo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "justificativaNovo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vagasAutorizadasMec",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "resolucao",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "modalidade",
+            "otherEntityName": "modalidade",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "turno",
+            "otherEntityName": "turno",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "unidade",
+            "otherEntityName": "unidade",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20181020200046",
+    "entityTableName": "curso",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

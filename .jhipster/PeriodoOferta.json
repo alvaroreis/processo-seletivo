@@ -1,0 +1,34 @@
+{
+    "name": "PeriodoOferta",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataInicio",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dataFim",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "demandaCurso",
+            "otherEntityName": "demandaCurso",
+            "otherEntityField": "resolucao"
+        }
+    ],
+    "changelogDate": "20181020200049",
+    "entityTableName": "periodo_oferta",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

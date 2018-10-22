@@ -1,0 +1,25 @@
+
+{
+    "processoSeletivoApp": {
+        "periodoOferta" : {
+            "home": {
+                "title": "Periodo Ofertas",
+                "createLabel": "Create a new Periodo Oferta",
+                "createOrEditLabel": "Create or edit a Periodo Oferta"
+            },
+            "created": "A new Periodo Oferta is created with identifier {{ param }}",
+            "updated": "A Periodo Oferta is updated with identifier {{ param }}",
+            "deleted": "A Periodo Oferta is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Periodo Oferta {{ id }}?"
+            },
+            "detail": {
+                "title": "Periodo Oferta"
+            },
+            "descricao": "Descricao",
+            "dataInicio": "Data Inicio",
+            "dataFim": "Data Fim",
+            "demandaCurso": "Demanda Curso"
+        }
+    }
+}

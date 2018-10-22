@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="processoSeletivoApp.curso.home.title">Cursos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-curso" [routerLink]="['/curso/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="processoSeletivoApp.curso.home.createLabel">
+            Create new Curso
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="cursos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codSigaa"><span jhiTranslate="processoSeletivoApp.curso.codSigaa">Cod Sigaa</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nome"><span jhiTranslate="processoSeletivoApp.curso.nome">Nome</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cursoNovo"><span jhiTranslate="processoSeletivoApp.curso.cursoNovo">Curso Novo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="justificativaNovo"><span jhiTranslate="processoSeletivoApp.curso.justificativaNovo">Justificativa Novo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vagasAutorizadasMec"><span jhiTranslate="processoSeletivoApp.curso.vagasAutorizadasMec">Vagas Autorizadas Mec</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resolucao"><span jhiTranslate="processoSeletivoApp.curso.resolucao">Resolucao</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modalidade.nome"><span jhiTranslate="processoSeletivoApp.curso.modalidade">Modalidade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="turno.nome"><span jhiTranslate="processoSeletivoApp.curso.turno">Turno</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="unidade.nome"><span jhiTranslate="processoSeletivoApp.curso.unidade">Unidade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let curso of cursos ;trackBy: trackId">
+                <td><a [routerLink]="['/curso', curso.id, 'view' ]">{{curso.id}}</a></td>
+                <td>{{curso.codSigaa}}</td>
+                <td>{{curso.nome}}</td>
+                <td>{{curso.cursoNovo}}</td>
+                <td>{{curso.justificativaNovo}}</td>
+                <td>{{curso.vagasAutorizadasMec}}</td>
+                <td>{{curso.resolucao}}</td>
+                <td>
+                    <div *ngIf="curso.modalidade">
+                        <a [routerLink]="['../modalidade', curso.modalidade?.id, 'view' ]" >{{curso.modalidade?.nome}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="curso.turno">
+                        <a [routerLink]="['../turno', curso.turno?.id, 'view' ]" >{{curso.turno?.nome}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="curso.unidade">
+                        <a [routerLink]="['../unidade', curso.unidade?.id, 'view' ]" >{{curso.unidade?.nome}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/curso', curso.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/curso', curso.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'curso/'+ curso.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="cursos && cursos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

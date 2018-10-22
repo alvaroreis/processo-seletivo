@@ -38,6 +38,22 @@ public class CacheConfiguration {
             cm.createCache(br.ufpa.labes.eas.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(br.ufpa.labes.eas.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(br.ufpa.labes.eas.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Modalidade.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Modalidade.class.getName() + ".cursos", jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Curso.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Turno.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Turno.class.getName() + ".cursos", jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.DemandaCurso.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.DemandaCurso.class.getName() + ".periodoOfertas", jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.PeriodoOferta.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Usuario.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Perfil.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Perfil.class.getName() + ".usuarios", jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Unidade.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Unidade.class.getName() + ".cursos", jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Unidade.class.getName() + ".demandaCursos", jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Cidade.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufpa.labes.eas.domain.Cidade.class.getName() + ".unidades", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -7,6 +7,15 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "modalidade": "Modalidade",
+                "curso": "Curso",
+                "turno": "Turno",
+                "demandaCurso": "Demanda Curso",
+                "periodoOferta": "Periodo Oferta",
+                "usuario": "Usuario",
+                "perfil": "Perfil",
+                "unidade": "Unidade",
+                "cidade": "Cidade",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

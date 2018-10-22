@@ -1,0 +1,54 @@
+{
+    "name": "Unidade",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "abreviacao",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usuario",
+            "otherEntityName": "usuario",
+            "otherEntityField": "nome",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "unidade(nome)"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "curso",
+            "otherEntityName": "curso",
+            "otherEntityRelationshipName": "unidade"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "demandaCurso",
+            "otherEntityName": "demandaCurso",
+            "otherEntityRelationshipName": "unidade"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "cidade",
+            "otherEntityName": "cidade",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20181020200052",
+    "entityTableName": "unidade",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
